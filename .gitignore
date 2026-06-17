@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Rapports Cucumber
+tests/playwright-cucumber/reports/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,10 +1,10 @@
 import { After, AfterAll, Before, BeforeAll } from '@cucumber/cucumber'
-import { chromium } from 'playwright'
+import { chromium, type Browser } from 'playwright'
 
-let browser
+let browser: Browser
 
 BeforeAll(async () => {
-  browser = await chromium.launch({ headless: process.env.HEADLESS !== '0' })
+  browser = await chromium.launch({ headless: false, slowMo: 1000 })
 })
 
 Before(async function () {
@@ -20,4 +20,3 @@ After(async function () {
 AfterAll(async () => {
   await browser?.close()
 })
-
